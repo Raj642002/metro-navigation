@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body{
+            background: rgb(117, 117, 231);
+        }
+        h1{
+            font-weight: 700;
+            font-style: italic;
+            /* font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; */
+            color : rgb(4, 0, 236);
+            animation: m 0.5s linear infinite ;
+        }
+        #m2{
+          position: relative;
+          bottom : 5vh;
+          right : 10vw;
+          animation: m2 5s linear infinite;
+           }
+           @keyframes m2{
+              0% {left : 0;}
+              100% {left : 100% ;}
+          }
+
+          @keyframes m {
+            0%{opacity : 1}
+            50%{opacity : 0}
+            100%{opacity : 1}
+          }
+          #network{
+            position: relative;
+            bottom: 6vh;
+          }
+    </style>
+    <title>METRO</title>
+</head>
+<body>
+
+<h1>METRO MAP</h1><img src="metro1.png" id="m2">
+<div id="network" style="width: 100%; height: 700px; border: 1px solid #ddd;"></div>
+
+
+<script type="text/javascript" src="https://unpkg.com/vis-network@9.1.2/dist/vis-network.min.js"></script>
+
+<script src="./script.js"></script>
+
+<script>
+    window.addEventListener("DOMContentLoaded", () => {
+        const path = JSON.parse(localStorage.getItem("pathToHighlight")) || [];
+        createGraphVisualization(metroGraph, path);
+    });
+</script>
+
+
+</body>
+</html>

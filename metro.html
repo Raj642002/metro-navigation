@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Metro Navigation System App</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <button id="logout" onclick="logout()">LogOut</button>
+  <h1>Metro Route Finder</h1>
+
+  <!-- <label for="source">Select Source:</label> -->
+  <select id="source">
+    <option value="">-- Select Source --</option>
+  </select>
+
+  <!-- <label for="destination">Select Destination:</label> -->
+  <select id="destination">
+    <option value="">-- Select Destination --</option>
+  </select>
+
+  <br /><br />
+
+ 
+  <button id="finddistance">Get Optimal Distance</button>
+  <button id="path" onclick="showpath()">Show Path</button>
+  <!-- <button onclick="getMinimumTime()">Get Min Time</button> -->
+
+  <div id="result"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
